@@ -1,5 +1,4 @@
-class power_of_two_231 {
-
+class power_of_two {
     public boolean isPowerOfTwo(int n) {
         if (n <= 0) {
             return false;
@@ -11,9 +10,8 @@ class power_of_two_231 {
     }
 
     public static void main(String[] args) {
-        power_of_two_231 obj = new power_of_two_231();
-
-        int n = 1024;   // yahan number change karke test karo
+        power_of_two obj = new power_of_two();
+        int n = 1;   // yahan number change karke test karo
          System.out.println(obj.isPowerOfTwo(n));
     }
 }
