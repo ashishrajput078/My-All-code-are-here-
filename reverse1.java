@@ -1,4 +1,5 @@
-public class reverse{
+import java.util.Arrays;
+public class reverse1{
     public static void reverse(int [] array , int start ,  int end ){
     while (start < end ){
         int temp  = array[start] ;
@@ -8,7 +9,6 @@ public class reverse{
         end--;
     }
     }
-}
 public static void main(String[]args){
     int []arr = {1,2,3,4,5};
     int len = arr.length-1;
@@ -18,4 +18,6 @@ public static void main(String[]args){
     reverse(arr , 0 , len-1-n);
     reverse(arr , 0 , len-1);
     System.out.println(Arrays.toString(arr));
+}
+
 }
