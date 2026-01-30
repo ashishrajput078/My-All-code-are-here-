@@ -11,8 +11,7 @@ public class First{
             if(arr[i] != 0){
                 count++ ;
             }
-        }
-        System.out.println(count);
+        }        System.out.println(count);
 
       
     }
