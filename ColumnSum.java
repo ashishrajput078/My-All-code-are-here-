@@ -27,3 +27,7 @@ public class ColumnSum {
         sc.close();
     }
 }
+
+
+
+a = a+b - (a =b)
