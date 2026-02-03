@@ -1,16 +1,23 @@
+import java.util.* ;
 class moye_moye {
     public boolean isHappy(int n) {
-        while(n/10!=0){
-            int a=0;
-            while(n!=0){
-                a+=Math.pow(n%10,2);
-                n=n/10;
-            }
-            n=a;
+        HashSet<Integer> set = new HashSet<>();
+
+        while (n != 1 && !set.contains(n)) {
+            set.add(n);
+            n = getSum(n);
         }
-        if(n==1 || n==7){
-            return true;
+
+        return n == 1;
+    }
+
+    private int getSum(int n) {
+        int sum = 0;
+        while (n != 0) {
+            int digit = n % 10;
+            sum += digit * digit;
+            n /= 10;
         }
-        return false;
+        return sum;
     }
 }
