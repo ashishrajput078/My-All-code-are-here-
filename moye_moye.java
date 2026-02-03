@@ -1,5 +1,4 @@
-import java.util.* ;
-class moye_moye {
+class Solution {
     public boolean isHappy(int n) {
         HashSet<Integer> set = new HashSet<>();
 
