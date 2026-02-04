@@ -1,17 +1,20 @@
-public class ProgressDemo{
-    public static void main(string[]args)throws Exception {
-        Scanner sc = new Scanner(system.in);
-        int m = sc.nextInt() ;
-        if (m< 50){
-            System.out.println("fail");
+class Solution {
+    public int climbStairs(int n) {
+        if (n==1){
+            return 1 ;
         }
-        else if (m>=50 && m< 60 ){
-            System.out.println("D");
+        if (n==2){
+            return 2 ;
+        }
+        int prev1 = 2 ;
+        int prev2 = 1 ;
+        int current ;
+        for (int i =3 ; i<=n ; i++){
+            current = prev1 +prev2 ;
+            prev2 = prev1 ; 
+            prev1 = current ;
+        }
+        return prev1 ;
 
-        }
-         else if (m>=60 && m< 70 ){
-            System.out.println("D");
-        }
-         else if (m>=70 && m< 80 ){
-            System.out.println("D");
     }
+}
