@@ -1,23 +1,24 @@
-import java.util.* ;
-class moye_moye {
-    public boolean isHappy(int n) {
-        HashSet<Integer> set = new HashSet<>();
+class Solution {
+    public int secondHighest(String s) {
+        int largest = -1;
+        int second = -1;
 
-        while (n != 1 && !set.contains(n)) {
-            set.add(n);
-            n = getSum(n);
+        for (int i = 0; i < s.length(); i++) {
+            char ch = s.charAt(i);
+
+            if (ch >= '0' && ch <= '9') {
+                int num = ch - '0';
+
+                if (num > largest) {
+                    second = largest;
+                    largest = num;
+                } 
+                else if (num < largest && num > second) {
+                    second = num;
+                }
+            }
         }
 
-        return n == 1;
-    }
-
-    private int getSum(int n) {
-        int sum = 0;
-        while (n != 0) {
-            int digit = n % 10;
-            sum += digit * digit;
-            n /= 10;
-        }
-        return sum;
+        return second;
     }
 }
