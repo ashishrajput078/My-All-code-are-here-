@@ -1,24 +1,19 @@
 class Solution {
-    public int secondHighest(String s) {
-        int largest = -1;
-        int second = -1;
+    public int countDigits(int num) {
+        int original = num;
+        int count = 0;
 
-        for (int i = 0; i < s.length(); i++) {
-            char ch = s.charAt(i);
+        while (num > 0) {
+            int digit = num % 10;
 
-            if (ch >= '0' && ch <= '9') {
-                int num = ch - '0';
-
-                if (num > largest) {
-                    second = largest;
-                    largest = num;
-                } 
-                else if (num < largest && num > second) {
-                    second = num;
-                }
+            // avoid division by zero
+            if (digit != 0 && original % digit == 0) {
+                count++;
             }
+
+            num = num / 10;
         }
 
-        return second;
+        return count;
     }
 }
