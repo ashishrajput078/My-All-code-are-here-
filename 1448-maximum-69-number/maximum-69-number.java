@@ -1,17 +1,14 @@
 class Solution {
-    public int maximum69Number(int num) {
-        int temp = num;
-        int place = 1;
-        int pos = 0;
+    public int maximum69Number (int num) {
+        char[] arr = String.valueOf(num).toCharArray();
 
-        while (temp > 0) {
-            if (temp % 10 == 6) {
-                pos = place;
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] == '6') {
+                arr[i] = '9';
+                break;  // only one change allowed
             }
-            temp /= 10;
-            place *= 10;
         }
 
-        return num + 3 * pos;
+        return Integer.parseInt(new String(arr));
     }
 }
