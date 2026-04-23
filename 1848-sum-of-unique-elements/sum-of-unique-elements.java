@@ -1,18 +1,10 @@
 class Solution {
     public int sumOfUnique(int[] nums) {
-       int sum =0 ;
-        for ( int i=0 ; i<nums.length ; i++){  
-         int count =0 ; 
-            for ( int j=0 ;j<nums.length ; j++){
-                if ( nums[i] == nums[j]) {
-                  count++ ;
-                } 
-            } 
-            if (count == 1){
-          sum +=  nums[i] ; 
-        }  
-        }
-        
-          return sum  ;
+        int[] f = new int[101];
+        for (int n : nums) f[n]++;
+        int sum = 0;
+        for (int i = 1; i <= 100; i++)
+            if (f[i] == 1) sum += i;
+        return sum;
     }
 }
